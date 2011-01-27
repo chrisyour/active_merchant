@@ -99,7 +99,7 @@ module ActiveMerchant #:nodoc:
         # Bogus card is pretty much for testing purposes. Lets just skip these extra tests if its used
         return if type == 'bogus'
 
-        validate_card_type
+        #validate_card_type
         validate_card_number
         validate_verification_value
         validate_switch_or_solo_attributes
@@ -134,8 +134,8 @@ module ActiveMerchant #:nodoc:
       end
       
       def validate_essential_attributes #:nodoc:
-        errors.add :first_name, "cannot be empty"      if @first_name.blank?
-        errors.add :last_name,  "cannot be empty"      if @last_name.blank?
+        #errors.add :first_name, "cannot be empty"      if @first_name.blank?
+        #errors.add :last_name,  "cannot be empty"      if @last_name.blank?
         errors.add :month,      "is not a valid month" unless valid_month?(@month)
         errors.add :year,       "expired"              if expired?
         errors.add :year,       "is not a valid year"  unless valid_expiry_year?(@year)
